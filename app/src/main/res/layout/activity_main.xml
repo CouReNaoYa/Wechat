@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="#FF2727"
+    android:focusable="false"
+    >
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="fill_parent"
+        android:background="#F8F8F8"
+        android:layout_height="fill_parent" />
+
+    <RadioGroup
+        android:id="@+id/titleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        >
+
+        <RadioButton
+            android:id="@+id/radioHome"
+            android:drawableTop="@drawable/xiaoxi"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="微信"
+            android:checked="true"
+            android:textSize="10dp"
+            android:clickable="true"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:padding="5dp"
+            />
+
+        <RadioButton
+            android:id="@+id/radioSearch"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/lianxiren"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="10dp"
+            android:layout_gravity="center"
+            android:text="通讯录"
+            android:checked="false"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:padding="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radioMore"
+            android:drawableTop="@drawable/faxian"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="发现"
+            android:textSize="10dp"
+            android:checked="false"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:padding="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radioPersonal"
+            android:drawableTop="@drawable/wo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="我"
+            android:checked="false"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:padding="5dp"/>
+    </RadioGroup>
+
+</RelativeLayout>

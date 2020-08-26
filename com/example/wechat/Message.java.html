@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Message.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Message.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>com.example.wechat;
+
+<span class="s0">import </span>android.content.Context;
+<span class="s0">import </span>android.os.Bundle;
+<span class="s0">import </span>android.view.LayoutInflater;
+<span class="s0">import </span>android.view.View;
+<span class="s0">import </span>android.view.ViewGroup;
+<span class="s0">import </span>android.widget.ImageView;
+<span class="s0">import </span>android.widget.TextView;
+
+<span class="s0">import </span>androidx.annotation.NonNull;
+<span class="s0">import </span>androidx.annotation.Nullable;
+<span class="s0">import </span>androidx.fragment.app.Fragment;
+<span class="s0">import </span>androidx.recyclerview.widget.LinearLayoutManager;
+<span class="s0">import </span>androidx.recyclerview.widget.RecyclerView;
+
+<span class="s0">import </span>java.util.ArrayList;
+<span class="s0">import </span>java.util.List;
+
+<span class="s0">public class </span>Message <span class="s0">extends </span>Fragment {
+    <span class="s0">private </span>RecyclerView recyclerView;
+    @Nullable
+    @Override
+    <span class="s0">public </span>View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.message,<span class="s0">null</span>);
+        List&lt;Message_item&gt;datas = <span class="s0">new </span>ArrayList&lt;&gt;();
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人1&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人2&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人3&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人4&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人5&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人6&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人7&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人8&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人9&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人10&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人11&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人12&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人13&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+        datas.add(<span class="s0">new </span>Message_item(<span class="s2">&quot;联系人14&quot;</span>,<span class="s2">&quot;吃饭了吗？&quot;</span>,<span class="s2">&quot;10:00&quot;</span>,R.drawable.lianxirentouxiang));
+
+
+
+        recyclerView = view.findViewById(R.id.my_recycler_view);
+        GeneralAdapter generalAdapter=<span class="s0">new </span>GeneralAdapter(getActivity(),datas);
+        recyclerView.setLayoutManager (<span class="s0">new </span>LinearLayoutManager(getActivity (),LinearLayoutManager.VERTICAL,<span class="s0">false</span>));
+        recyclerView.setAdapter(generalAdapter);
+        <span class="s0">return </span>view;
+    }
+
+
+    <span class="s0">class </span>Message_item {
+        <span class="s0">public </span>String name_message;
+        <span class="s0">public </span>String text_message;
+        <span class="s0">public </span>String time_message;
+        <span class="s0">public int </span>picture_message;  <span class="s3">//图片的类型为int</span>
+
+        <span class="s0">public </span>Message_item(String name_message,String text_message,String time_message,<span class="s0">int </span>picture_message) {
+            <span class="s0">this</span>.name_message = name_message;
+            <span class="s0">this</span>.text_message = text_message;
+            <span class="s0">this</span>.time_message = time_message;
+            <span class="s0">this</span>.picture_message=picture_message;
+        }
+    }
+
+    <span class="s0">class </span>GeneralAdapter <span class="s0">extends </span>RecyclerView.Adapter&lt;GeneralAdapter.MyViewHolder&gt;{
+        Context context; <span class="s3">//当前上下文对象</span>
+        List&lt;Message_item&gt; datas; <span class="s3">//RecyclerView填充Item数据的List对象</span>
+
+        <span class="s0">public </span>GeneralAdapter(Context context,List&lt;Message_item&gt; datas){
+            <span class="s0">this</span>.context = context;
+            <span class="s0">this</span>.datas = datas;
+        }
+        @NonNull
+        @Override
+        <span class="s0">public </span>MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, <span class="s0">int </span>viewType) {
+            <span class="s3">//实例化得到Item布局文件的View对象</span>
+            View v = View.inflate(context, R.layout.message_item,<span class="s0">null</span>);<span class="s3">//R后面的是item的ui</span>
+            <span class="s3">//返回MyViewHolder的对象</span>
+            <span class="s0">return new </span>MyViewHolder(v);
+        }
+
+
+        <span class="s0">public void </span>onBindViewHolder(@NonNull MyViewHolder holder, <span class="s0">int </span>position) {
+            holder.name_message.setText(datas.get(position).name_message);    <span class="s3">//前面的是myviewholder中的，后面的是类模板中的</span>
+            holder.text_message.setText(datas.get(position).text_message);
+            holder.time_message.setText(datas.get(position).time_message);
+            holder.picture_message.setImageResource(datas.get(position).picture_message);
+
+        }
+        @Override
+        <span class="s0">public int </span>getItemCount() {
+            <span class="s0">return </span>datas.size();
+        }
+        <span class="s0">class </span>MyViewHolder <span class="s0">extends </span>RecyclerView.ViewHolder{
+            TextView name_message;
+            TextView text_message;
+            TextView time_message;
+            ImageView picture_message;                                                              <span class="s3">//图片当控件的时候是imageview，变量的时候是int</span>
+
+            <span class="s0">public </span>MyViewHolder(View itemView) {
+                <span class="s0">super</span>(itemView);
+                name_message = itemView.findViewById(R.id.message_name);
+                text_message = itemView.findViewById(R.id.message_text);
+                time_message = itemView.findViewById(R.id.message_time);
+                picture_message=itemView.findViewById(R.id.message_picture);
+
+            }
+        }
+
+    }
+}
+</pre>
+</body>
+</html>
